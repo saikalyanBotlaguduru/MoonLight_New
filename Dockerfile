@@ -1,6 +1,6 @@
 FROM adoptopenjdk/maven-openjdk8:latest
 
- 
+RUN add-apt-repository ppa:git-core/ppa
 # Prepare installation of Oracle Java 8
 RUN apt-get install git
 
