@@ -1,9 +1,16 @@
-FROM adoptopenjdk/maven-openjdk8:latest
+FROM fedora
 
-RUN add-apt-repository ppa:git-core/ppa
-# Prepare installation of Oracle Java 8
-RUN apt-get install git
 
+ENV JDK_VERSION 1.8.0
+ENV MVN_VERSION 3.2.5
+
+RUN yum -y update
+RUN yum -y install tar java-$JDK_VERSION-openjdk && rm -rf /var/cache/yum
+
+RUN yum -y git 
+
+RUN curl --silent http://www.eu.apache.org/dist/maven/maven-3/$MVN_VERSION/binaries/apache-maven-$MVN_VERSION-bin.tar.gz | tar xvz
+RUN ln -s $(pwd)/apache-maven-$MVN_VERSION/bin/mvn /usr/bin/mvn
 
 
 WORKDIR  /usr/share/kalyan
