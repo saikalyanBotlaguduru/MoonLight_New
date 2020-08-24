@@ -1,7 +1,7 @@
 FROM adoptopenjdk/maven-openjdk11:latest
 
 
-RUN apk install git
+RUN apt-get install git
 
 WORKDIR  /usr/share/kalyan
 
