@@ -1,38 +1,36 @@
-FROM openjdk:8u191-jre-alpine3.8
+FROM ubuntu:trusty
+MAINTAINER  Ankush Goyal <ankush.goyal@prontoitlabs.com>
 
+ENV JAVA_VER 8
+ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
+RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list && \
+    echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list && \
+    echo 'deb http://archive.ubuntu.com/ubuntu trusty main universe' >> /etc/apt/sources.list && \
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886 && \
+    apt-get update && \
+    apt-get install -y git wget && \
+    echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
+    apt-get install -y --force-yes --no-install-recommends oracle-java${JAVA_VER}-installer oracle-java${JAVA_VER}-set-default && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    rm -rf /var/cache/oracle-jdk${JAVA_VER}-installer
 
-# Workspace
+# Set Oracle Java as the default Java
+RUN update-java-alternatives -s java-8-oracle
+RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> ~/.bashrc
+
+# Install maven 3.3.9
+RUN wget --no-verbose -O /tmp/apache-maven-3.3.9-bin.tar.gz http://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz && \
+    tar xzf /tmp/apache-maven-3.3.9-bin.tar.gz -C /opt/ && \
+    ln -s /opt/apache-maven-3.3.9 /opt/maven && \
+    ln -s /opt/maven/bin/mvn /usr/local/bin  && \
+    rm -f /tmp/apache-maven-3.3.9-bin.tar.gz
+
+ENV MAVEN_HOME /opt/maven
 
 WORKDIR  /usr/share/kalyan
-RUN  apk  add  git
-Run apk add maven
 
 RUN  git clone  https://github.com/saikalyanBotlaguduru/MoonLight_New.git
 
-# ADD .jar under target from host
-# into this image
-# ADD target/selenium-docker.jar 			selenium-docker.jar
-# ADD target/selenium-docker-tests.jar 	selenium-docker-tests.jar
-# ADD target/libs							libs
 
-# # in case of any other dependency like .csv / .json / .xls
-# # please ADD that as well
-
-# # ADD suite files
-# ADD book-flight-moduele.xml				book-flight-module.xml
-# ADD search-module.xml			te		search-module.xml
-
-# # ADD health check script
-# #ADD healthcheck.sh                      healthcheck.sh
-# RUN wget https://s3.amazonaws.com/selenium-docker/healthcheck/healthcheck.sh
-
-# # BROWSER
-# # HUB_HOST
-# # MODULE
-# #java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* \
-# #    -DBROWSER=$BROWSER \
-# #   -DHUB_HOST=$HUB_HOST \
-# #    org.testng.TestNG $MODULE
-
-# ENTRYPOINT sh healthcheck.sh
