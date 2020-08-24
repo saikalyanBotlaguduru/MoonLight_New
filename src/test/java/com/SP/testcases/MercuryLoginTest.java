@@ -28,13 +28,13 @@ public class MercuryLoginTest extends TestBase {
 		type("password_XPATH",data.get("password"));
 		click("login_XPATH");
 		Thread.sleep(2000);
-		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-		
-		Assert.assertTrue(alert.getText().contains(data.get("alerttext")));
-		alert.accept();
-		
-		Thread.sleep(2000);
-		
+//		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+//		
+//		Assert.assertTrue(alert.getText().contains(data.get("alerttext")));
+//		alert.accept();
+//		
+//		Thread.sleep(2000);
+//		
 	}
 	
 	

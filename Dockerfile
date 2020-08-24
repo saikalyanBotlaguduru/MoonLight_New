@@ -5,8 +5,10 @@ FROM openjdk:8u191-jre-alpine3.8
 # Workspace
 
 WORKDIR  /usr/share/kalyan
+RUN  apk  add  git
+Run apk add maven
 
-RUN https://github.com/saikalyanBotlaguduru/MoonLight_New.git
+RUN  git clone  https://github.com/saikalyanBotlaguduru/MoonLight_New.git
 
 # ADD .jar under target from host
 # into this image
