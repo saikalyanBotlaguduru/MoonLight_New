@@ -1,7 +1,7 @@
-FROM adoptopenjdk/maven-openjdk11:latest
+FROM iflavoursbv/mvn-openjdk-8-alpine
 
+RUN apk add --no-cache git
 
-RUN apt-get install git
 
 WORKDIR  /usr/share/kalyan
 
