@@ -20,8 +20,8 @@ RUN  git clone  https://github.com/saikalyanBotlaguduru/MoonLight_New.git
 # # please ADD that as well
 
 # # ADD suite files
-# ADD book-flight-module.xml				book-flight-module.xml
-# ADD search-module.xml					search-module.xml
+# ADD book-flight-moduele.xml				book-flight-module.xml
+# ADD search-module.xml			te		search-module.xml
 
 # # ADD health check script
 # #ADD healthcheck.sh                      healthcheck.sh
