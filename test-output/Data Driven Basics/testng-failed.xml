@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Data Driven Basics]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.SP.listeners.CustomListeners"/>
+  </listeners>
+  <test name="MercuryLoginTest(failed)">
+    <classes>
+      <class name="com.SP.testcases.MercuryLoginTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="mercuryLoginTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.SP.testcases.MercuryLoginTest -->
+    </classes>
+  </test> <!-- MercuryLoginTest(failed) -->
+</suite> <!-- Failed suite [Data Driven Basics] -->
