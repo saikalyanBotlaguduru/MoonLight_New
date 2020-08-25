@@ -1,18 +1,12 @@
 # Use the latest image from UBUNTU installed in the machine
-FROM ubuntu:latest
+FROM ubuntu:16.04
+LABEL MAINTAINER Michael Laccetti <michael@laccetti.com> <https://laccetti.com/)
 
-MAINTAINER corefinder@docker.com
-
-# Update ubuntu system
-RUN apt-get update
-
-# Install java version on ubuntu-selenium image
-RUN apt-get install -y default-jdk
-RUN apt-get install -y default-jre
-
-# Install phantomjs
-RUN apt-get install -y phantomjs
-
+RUN apt-get update && \
+    apt-get install -y curl \
+    wget \
+    openjdk-8-jdk
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 # Install maven on ubuntu-selenium image
 RUN apt-get install -y maven
 
