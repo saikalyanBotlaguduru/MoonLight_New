@@ -1,5 +1,7 @@
 From miniitlabs/openjdk8-maven3:latest
 
+RUN apt update 
+
 RUN apt  install -y git
 
 
