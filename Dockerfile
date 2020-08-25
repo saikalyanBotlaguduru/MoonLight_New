@@ -1,6 +1,6 @@
-FROM ubuntu:latest
+From miniitlabs/openjdk8-maven3:latest
 
-RUN apt-get update && apt-get install -y openjdk-8-jdk maven
+WORKDIR  /usr/share/kalyan
+RUN chmod 777 /usr/share/kalyan
 
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
-RUN export JAVA_HOME
+RUN git clone  https://github.com/saikalyanBotlaguduru/MoonLight_New.git
