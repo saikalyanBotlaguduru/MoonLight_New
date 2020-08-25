@@ -2,8 +2,8 @@
 FROM ubuntu:16.04
 LABEL MAINTAINER Michael Laccetti <michael@laccetti.com> <https://laccetti.com/)
 
-RUN sudo add-apt-repository ppa:webupd8team/java
-RUN sudo apt-get update
+RUN  add-apt-repository ppa:webupd8team/java
+RUN  apt-get update
 RUN  apt-get install oracle-java8-installer
 
 
