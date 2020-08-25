@@ -2,12 +2,9 @@
 FROM ubuntu:16.04
 LABEL MAINTAINER Michael Laccetti <michael@laccetti.com> <https://laccetti.com/)
 
-RUN apt-get install software-properties-common
-RUN  add-apt-repository ppa:webupd8team/java
-RUN  apt-get update
-RUN  apt-get install oracle-java8-installer
-
-
+RUN add-apt-repository ppa:openjdk-r/ppa
+RUN apt-get update
+RUN apt-get install openjdk-8-jre
 # Install maven on ubuntu-selenium image
 RUN apt-get install -y maven
 
