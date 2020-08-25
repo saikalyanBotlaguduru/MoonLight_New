@@ -10,5 +10,6 @@ ENV MAVEN_HOME /usr/share/maven
 RUN mkdir --parents /usr/share/kalyan
 
 WORKDIR  /usr/share/kalyan
+RUN chmod 777 /usr/share/kalyan
 
 RUN git clone  https://github.com/saikalyanBotlaguduru/MoonLight_New.git
