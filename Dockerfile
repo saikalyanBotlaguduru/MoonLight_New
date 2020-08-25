@@ -1,5 +1,5 @@
 # Use the latest image from UBUNTU installed in the machine
-FROM ubuntu:16.04
+FROM ubuntu:latest
 LABEL MAINTAINER Michael Laccetti <michael@laccetti.com> <https://laccetti.com/)
 # Install maven on ubuntu-selenium image
 RUN apt-get update -qq && apt-get install -y -qq apt-utils && mkdir -p /usr/share/man/man1 \
