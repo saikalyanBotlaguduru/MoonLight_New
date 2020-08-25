@@ -1,5 +1,5 @@
 # Use the latest image from UBUNTU installed in the machine
-FROM xqdocker/ubuntu-openjdk:latest
+FROM xqdocker/ubuntu-openjdk
 
 # Install maven on ubuntu-selenium image
 
