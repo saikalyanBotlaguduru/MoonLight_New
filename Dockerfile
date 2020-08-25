@@ -1,9 +1,8 @@
 From miniitlabs/openjdk8-maven3:latest
 
-RUN apt update 
-
-RUN apt  install -y git
-
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install --assume-yes git
 
 WORKDIR  /usr/share/kalyan
 RUN chmod 777 /usr/share/kalyan
