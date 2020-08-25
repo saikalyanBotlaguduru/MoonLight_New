@@ -5,7 +5,7 @@ WORKDIR  /usr/share/kalyan
 
 
 
-RUN  sudo chmod 755 /usr/share/kalyan
+RUN  chmod 755 /usr/share/kalyan
 
 
 
