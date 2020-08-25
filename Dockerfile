@@ -1,15 +1,26 @@
+# Use the latest image from UBUNTU installed in the machine
+FROM ubuntu:latest
 
-FROM java:openjdk-8-jdk
-ENV MAVEN_VERSION 3.3.9
+MAINTAINER corefinder@docker.com
 
-RUN curl -fsSL https://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
-  && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
-  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-ENV MAVEN_HOME /usr/share/maven
+# Update ubuntu system
+RUN apt-get update
 
-RUN mkdir --parents /usr/share/kalyan
+# Install java version on ubuntu-selenium image
+RUN apt-get install -y default-jdk
+RUN apt-get install -y default-jre
 
-WORKDIR  /usr/share/kalyan
-RUN chmod 777 /usr/share/kalyan
+# Install phantomjs
+RUN apt-get install -y phantomjs
 
-RUN git clone  https://github.com/saikalyanBotlaguduru/MoonLight_New.git
+# Install maven on ubuntu-selenium image
+RUN apt-get install -y maven
+
+# Install git on ubuntu-selenium image
+RUN apt-get install -y git
+
+# Get the repository onto the local system
+RUN git clone https://github.com/saikalyanBotlaguduru/MoonLight_New.git
+
+# Run the maven command to execute all the tests
+WORKDIR "/DockerSelenium"
