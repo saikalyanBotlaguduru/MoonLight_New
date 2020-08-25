@@ -3,10 +3,10 @@ FROM xqdocker/ubuntu-openjdk:jdk-8
 
 # Install maven on ubuntu-selenium image
 
-RUN apt-get install -y maven
+RUN apt install  maven
 
 # Install git on ubuntu-selenium image
-RUN apt-get install -y git
+RUN apt install git
 
 # Get the repository onto the local system
 RUN git clone https://github.com/saikalyanBotlaguduru/MoonLight_New.git
