@@ -56,7 +56,7 @@ public class TestBase {
 
 			try {
 				fis = new FileInputStream(
-						System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\Config.properties");
+						System.getProperty("user.dir") + "//src//test//resources//properties//Config.properties");
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -71,7 +71,7 @@ public class TestBase {
 
 			try {
 				fis = new FileInputStream(
-						System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\OR.properties");
+						System.getProperty("user.dir") + "//src//test//resources//properties//OR.properties");
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -108,13 +108,13 @@ public class TestBase {
 			} else if (config.getProperty("browser").equals("chrome")) {
 
 				System.setProperty("webdriver.chrome.driver",
-						System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
+						System.getProperty("user.dir") + "//src//test//resources//executables//chromedriver.exe");
 				driver = new ChromeDriver();
 				log.debug("Chrome Launched !!!");
 			} else if (config.getProperty("browser").equals("ie")) {
 
 				System.setProperty("webdriver.ie.driver",
-						System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\IEDriverServer.exe");
+						System.getProperty("user.dir") + "//src//test//resources//executables//IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
 
 			}
