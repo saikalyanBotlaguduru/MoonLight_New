@@ -1,5 +1,7 @@
-FROM botlasai/ubuntu_moonlight
-WORKDIR  /usr/share/kalyan
+FROM maven:3.6.2-jdk-8
+
+# Firefox
+
 ARG FIREFOX_VERSION=70.0
 RUN apt-get update -qqy \
 	&& apt-get -qqy install libgtk-3-0 libdbus-glib-1-2 libxt6 \
@@ -18,5 +20,7 @@ RUN wget -q -O /tmp/geckodriver.tar.gz https://github.com/mozilla/geckodriver/re
 	&& rm /tmp/geckodriver.tar.gz \
 	&& mv /opt/geckodriver /opt/geckodriver-$GECKODRIVER_VERSION \
 	&& ln -s /opt/geckodriver-$GECKODRIVER_VERSION /usr/bin/geckodriver
+
+WORKDIR  /usr/share/kalyan
 
 RUN  git clone  https://github.com/saikalyanBotlaguduru/MoonLight_New.git
