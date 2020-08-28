@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="9.101">
+           time="8.076">
   <properties />
   
   
-            <testcase name="mercuryLoginTest" time="9.101" classname="com.SP.testcases.MercuryLoginTest" />
+            <testcase name="mercuryLoginTest" time="8.076" classname="com.SP.testcases.MercuryLoginTest" />
       
 </testsuite>

@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Data Driven Basics" duration-ms="9829" started-at="2020-08-25T10:41:31Z" finished-at="2020-08-25T10:41:41Z">
+  <suite name="Data Driven Basics" duration-ms="8443" started-at="2020-08-28T04:58:16Z" finished-at="2020-08-28T04:58:24Z">
     <groups>
     </groups>
-    <test name="MercuryLoginTest" duration-ms="9829" started-at="2020-08-25T10:41:31Z" finished-at="2020-08-25T10:41:41Z">
+    <test name="MercuryLoginTest" duration-ms="8443" started-at="2020-08-28T04:58:16Z" finished-at="2020-08-28T04:58:24Z">
       <class name="com.SP.testcases.MercuryLoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.SP.testcases.MercuryLoginTest@229f66ed]" name="setUp" is-config="true" duration-ms="43461" started-at="2020-08-25T16:10:48Z" finished-at="2020-08-25T16:11:31Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.SP.testcases.MercuryLoginTest@229f66ed]" name="setUp" is-config="true" duration-ms="20263" started-at="2020-08-28T10:27:56Z" finished-at="2020-08-28T10:28:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="mercuryLoginTest(java.util.Hashtable)[pri:0, instance:com.SP.testcases.MercuryLoginTest@229f66ed]" name="mercuryLoginTest" duration-ms="9101" started-at="2020-08-25T16:11:31Z" data-provider="dp" finished-at="2020-08-25T16:11:40Z">
+        <test-method status="PASS" signature="mercuryLoginTest(java.util.Hashtable)[pri:0, instance:com.SP.testcases.MercuryLoginTest@229f66ed]" name="mercuryLoginTest" duration-ms="8076" started-at="2020-08-28T10:28:16Z" data-provider="dp" finished-at="2020-08-28T10:28:24Z">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mercuryLoginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.SP.testcases.MercuryLoginTest@229f66ed]" name="tearDown" is-config="true" duration-ms="6572" started-at="2020-08-25T16:11:41Z" finished-at="2020-08-25T16:11:48Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.SP.testcases.MercuryLoginTest@229f66ed]" name="tearDown" is-config="true" duration-ms="8232" started-at="2020-08-28T10:28:24Z" finished-at="2020-08-28T10:28:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
