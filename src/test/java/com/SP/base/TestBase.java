@@ -108,7 +108,7 @@ public class TestBase {
 			} else if (config.getProperty("browser").equals("chrome")) {
 
 				System.setProperty("webdriver.chrome.driver",
-						System.getProperty("user.dir") + "//src//test//resources//executables//chromedriver.exe");
+						System.getProperty("user.dir") + "//src//test//resources//executables//chromedriver");
 				driver = new ChromeDriver();
 				log.debug("Chrome Launched !!!");
 			} else if (config.getProperty("browser").equals("ie")) {
